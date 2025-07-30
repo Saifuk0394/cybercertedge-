@@ -29,6 +29,16 @@
         .ai-coach-image {
             border-radius: 12px;
             box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            object-fit: cover;
+            height: 100%;
+            width: 100%;
+        }
+        .platform-preview {
+            border-radius: 12px;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+            object-fit: cover;
+            height: 100%;
+            width: 100%;
         }
         .cert-level {
             font-size: 0.75rem;
@@ -48,6 +58,12 @@
             background-color: #8b5cf6;
             color: white;
         }
+        .image-container {
+            height: 300px;
+            overflow: hidden;
+            border-radius: 12px;
+            border: 1px solid #1e293b;
+        }
     </style>
 </head>
 <body class="antialiased">
@@ -58,7 +74,7 @@
             <div class="hidden md:flex space-x-8">
                 <a href="#features" class="text-gray-300 hover:text-indigo-300 transition">Features</a>
                 <a href="#ai-coach" class="text-gray-300 hover:text-indigo-300 transition">AI Coach</a>
-                <a href="#certifications" class="text-gray-300 hover:text-indigo-300 transition">Certifications</a>
+                <div class="text-gray-300 hover:text-indigo-300 transition">Certifications</a>
                 <a href="#how-it-works" class="text-gray-300 hover:text-indigo-300 transition">How It Works</a>
             </div>
             <button class="md:hidden text-gray-300">
@@ -120,14 +136,12 @@
                     </ul>
                 </div>
                 <div class="md:w-1/2">
-                    <div class="bg-gray-800 p-6 rounded-lg border border-gray-700">
-                        <div class="bg-gray-700 rounded-lg h-64 w-full flex items-center justify-center mb-4">
-                            <span class="text-gray-400">AI Coach Dashboard Preview</span>
-                        </div>
-                        <div class="text-center">
-                            <h3 class="text-xl font-semibold text-white mb-2">Smart Learning Analytics</h3>
-                            <p class="text-gray-400">Track your progress across all domains with visual metrics</p>
-                        </div>
+                    <div class="image-container">
+                        <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="AI Coach Dashboard" class="ai-coach-image">
+                    </div>
+                    <div class="text-center mt-4">
+                        <h3 class="text-xl font-semibold text-white mb-2">Smart Learning Analytics Dashboard</h3>
+                        <p class="text-gray-400">Track your progress across all domains with visual metrics</p>
                     </div>
                 </div>
             </div>
@@ -307,8 +321,8 @@
             <h2 class="text-3xl md:text-4xl font-bold text-center text-indigo-300 mb-16">How It Works</h2>
             <div class="flex flex-col md:flex-row justify-between items-center">
                 <div class="md:w-1/2 mb-10 md:mb-0">
-                    <div class="bg-gray-700 rounded-lg h-64 w-full flex items-center justify-center">
-                        <span class="text-gray-400">Platform Preview</span>
+                    <div class="image-container">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Platform Preview" class="platform-preview">
                     </div>
                 </div>
                 <div class="md:w-1/2 md:pl-10">
@@ -344,24 +358,6 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Coming Soon -->
-    <section class="py-20 gradient-bg text-center">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Coming Soon</h2>
-            <p class="text-xl text-indigo-200 max-w-2xl mx-auto mb-10">
-                We're working hard to launch CyberCertEdge. Stay tuned for updates!
-            </p>
-            <form class="max-w-md mx-auto">
-                <div class="flex">
-                    <input type="email" placeholder="Your email address" class="flex-grow px-4 py-3 rounded-l-lg focus:outline-none text-gray-900">
-                    <button type="submit" class="bg-indigo-800 hover:bg-indigo-900 text-white font-bold py-3 px-6 rounded-r-lg transition">
-                        Notify Me
-                    </button>
-                </div>
-            </form>
         </div>
     </section>
 
