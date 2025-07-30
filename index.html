@@ -3,182 +3,122 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CyberCertEdge - Coming Soon</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <title>CyberCertEdge</title>
   <style>
+    :root {
+      --bg-light: #f9f9f9;
+      --bg-dark: #0f0f0f;
+      --text-light: #0f0f0f;
+      --text-dark: #ffffff;
+    }
     body {
       margin: 0;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
       font-family: 'Segoe UI', sans-serif;
-      color: white;
-      background: linear-gradient(120deg, #007cf0, #00dfd8);
-      background-size: 300% 300%;
-      animation: gradientMove 12s ease infinite;
-      overflow-x: hidden;
-    }
-    @keyframes gradientMove {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-    header {
       text-align: center;
-      padding: 80px 20px;
-    }
-    header img {
-      width: 120px;
-      margin-bottom: 20px;
-    }
-    header h1 { font-size: 2.5rem; margin-bottom: 10px; }
-    header p.tagline {
-      font-size: 1.2rem;
-      font-weight: bold;
-      margin-bottom: 20px;
-    }
-    .description {
-      max-width: 600px;
-      margin: auto;
-      font-size: 1rem;
-      line-height: 1.5;
-    }
-    .cta-btn {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 10px 30px;
-      border: none;
-      background: white;
-      color: #007cf0;
-      font-weight: bold;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: background 0.3s;
-    }
-    .cta-btn:hover { background: #e0e0e0; }
-    section {
-      padding: 60px 20px;
-      text-align: center;
-      max-width: 1100px;
-      margin: auto;
-    }
-    .features, .why-choose {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 30px;
-      margin-top: 40px;
-    }
-    .card {
-      background: rgba(255, 255, 255, 0.1);
-      border-radius: 10px;
-      padding: 30px 20px;
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-    }
-    .card i { font-size: 2rem; margin-bottom: 20px; }
-    footer {
-      text-align: center;
-      padding: 30px 20px;
-      background: rgba(0, 0, 0, 0.2);
-      margin-top: 50px;
-    }
-    footer a {
-      color: white;
-      margin: 0 10px;
-      font-size: 1.2rem;
-      transition: color 0.3s;
-    }
-    footer a:hover { color: #00dfd8; }
-    footer p { margin-top: 10px; font-size: 0.9rem; }
-    /* Typewriter Effect */
-    .typewriter span {
-      border-right: 2px solid #fff;
-      white-space: nowrap;
       overflow: hidden;
-      display: inline-block;
+      transition: background 1s ease, color 1s ease;
+      background: var(--bg-light);
+      color: var(--text-light);
+    }
+    body.dark {
+      background: var(--bg-dark);
+      color: var(--text-dark);
+    }
+    .background {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      background: linear-gradient(-45deg, #00c3ff, #1a73e8, #3f51b5, #673ab7);
+      background-size: 400% 400%;
+      animation: gradient 15s ease infinite;
+    }
+    @keyframes gradient {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
+    }
+    .logo {
+      width: 180px;
+      height: auto;
+      animation: glow 2s ease-in-out infinite alternate;
+    }
+    @keyframes glow {
+      from { filter: drop-shadow(0 0 2px #00c3ff) drop-shadow(0 0 4px #00c3ff); }
+      to { filter: drop-shadow(0 0 10px #00c3ff) drop-shadow(0 0 20px #00c3ff); }
+    }
+    h1 { font-size: 2.2rem; margin-top: 20px; }
+    p { font-size: 1.2rem; color: inherit; margin-top: 10px; }
+    .buttons { margin-top: 30px; display: flex; gap: 15px; flex-wrap: wrap; }
+    .buttons a {
+      padding: 12px 24px;
+      background: #00c3ff;
+      border-radius: 6px;
+      color: #fff;
+      font-size: 1rem;
+      text-decoration: none;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .buttons a:hover {
+      transform: scale(1.05);
+      box-shadow: 0px 0px 15px #00c3ff;
+    }
+    @media (max-width: 600px) {
+      h1 { font-size: 1.8rem; }
+      p { font-size: 1rem; }
+      .buttons a { font-size: 0.9rem; padding: 10px 20px; }
+    }
+    /* Custom Cursor Glow */
+    .cursor {
+      position: fixed;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: rgba(0, 195, 255, 0.5);
+      pointer-events: none;
+      transform: translate(-50%, -50%);
+      transition: width 0.2s ease, height 0.2s ease;
     }
   </style>
 </head>
 <body>
-  <header data-aos="fade-down">
-    <img src="logo.png" alt="CyberCertEdge Logo" />
-    <h1>CyberCertEdge</h1>
-    <p class="tagline typewriter"><span id="typewriter"></span></p>
-    <p class="description">CyberCertEdge is your one-stop platform for mastering cybersecurity certifications. Access realistic mock exams, domain-wise practice, AI-powered insights, and smart performance analytics – everything you need to prepare with confidence and succeed like a pro.</p>
-    <button class="cta-btn">Get Early Access</button>
-  </header>
+  <div class="background"></div>
+  <div class="cursor"></div>
+  <img src="logo.png" alt="CyberCertEdge Logo" class="logo" />
+  <h1>CyberCertEdge</h1>
+  <p>Prep Like a Pro. Pass Like a Boss.</p>
+  <div class="buttons">
+    <a href="https://github.com/Saifuk0394/cybercertedge" target="_blank">Explore Code</a>
+    <a href="https://saifuk0394.github.io/cybercertedge/" target="_blank">Live Demo</a>
+  </div>
 
-  <section data-aos="fade-up">
-    <h2>Key Features</h2>
-    <div class="features">
-      <div class="card" data-aos="fade-up" data-aos-delay="100">
-        <i class="fa-solid fa-clipboard-check"></i>
-        <h3>Mock Exams</h3>
-        <p>Realistic, domain-wise, timed tests to simulate actual exam conditions.</p>
-      </div>
-      <div class="card" data-aos="fade-up" data-aos-delay="200">
-        <i class="fa-solid fa-chalkboard-user"></i>
-        <h3>Practice Mode</h3>
-        <p>Flexible practice with instant feedback and AI-powered suggestions.</p>
-      </div>
-      <div class="card" data-aos="fade-up" data-aos-delay="300">
-        <i class="fa-solid fa-robot"></i>
-        <h3>AI Smart Coach</h3>
-        <p>Personalized learning recommendations based on your performance.</p>
-      </div>
-      <div class="card" data-aos="fade-up" data-aos-delay="400">
-        <i class="fa-solid fa-chart-line"></i>
-        <h3>Performance Analytics</h3>
-        <p>Track strengths, weaknesses, and exam readiness in real time.</p>
-      </div>
-    </div>
-  </section>
-
-  <section data-aos="fade-up">
-    <h2>Why Choose Us?</h2>
-    <div class="why-choose">
-      <div class="card" data-aos="fade-up" data-aos-delay="100">
-        <i class="fa-solid fa-brain"></i>
-        <h3>AI-Powered Insights</h3>
-        <p>Smart performance tracking and suggestions tailored to you.</p>
-      </div>
-      <div class="card" data-aos="fade-up" data-aos-delay="200">
-        <i class="fa-solid fa-sync-alt"></i>
-        <h3>Always Updated</h3>
-        <p>Question banks updated regularly to match real-world exams.</p>
-      </div>
-      <div class="card" data-aos="fade-up" data-aos-delay="300">
-        <i class="fa-solid fa-shield-halved"></i>
-        <h3>Secure & Reliable</h3>
-        <p>Your learning data is safe with industry-standard encryption.</p>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    <div>
-      <a href="#"><i class="fab fa-linkedin"></i></a>
-      <a href="#"><i class="fab fa-twitter"></i></a>
-      <a href="#"><i class="fab fa-github"></i></a>
-    </div>
-    <p>&copy; 2025 CyberCertEdge. All rights reserved.</p>
-  </footer>
-
-  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
   <script>
-    AOS.init({ once: true });
-    const text = "Prep Like a Pro. Pass Like a Boss.";
-    const speed = 100;
-    let i = 0;
-    function typeWriter() {
-      if (i < text.length) {
-        document.getElementById("typewriter").textContent += text.charAt(i);
-        i++;
-        setTimeout(typeWriter, speed);
-      }
+    // Auto Dark Mode Detection
+    function setTheme() {
+      document.body.classList.toggle('dark', window.matchMedia('(prefers-color-scheme: dark)').matches);
     }
-    typeWriter();
+    setTheme();
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', setTheme);
+
+    // Cursor Glow Effect
+    const cursor = document.querySelector('.cursor');
+    document.addEventListener('mousemove', (e) => {
+      cursor.style.left = e.clientX + 'px';
+      cursor.style.top = e.clientY + 'px';
+    });
+    document.addEventListener('mousedown', () => {
+      cursor.style.width = '40px';
+      cursor.style.height = '40px';
+    });
+    document.addEventListener('mouseup', () => {
+      cursor.style.width = '20px';
+      cursor.style.height = '20px';
+    });
   </script>
 </body>
 </html>
