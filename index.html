@@ -3,247 +3,284 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CyberCertEdge - AI-Powered Cybersecurity Exam Prep</title>
-    <!-- Tailwind CSS CDN -->
+    <title>CyberCertEdge - AI-Powered Cybersecurity Certification Prep</title>
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts - Inter -->
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #0f172a; /* Dark blue-gray background */
-            color: #e2e8f0; /* Light gray text */
+            background-color: #0f172a;
+            color: #e2e8f0;
         }
-        /* Custom scrollbar for better aesthetics */
-        ::-webkit-scrollbar {
-            width: 8px;
+        .gradient-bg {
+            background: linear-gradient(135deg, #1e3a8a 0%, #7c3aed 100%);
         }
-        ::-webkit-scrollbar-track {
-            background: #1e293b;
+        .feature-card {
+            transition: all 0.3s ease;
+            border: 1px solid #1e293b;
         }
-        ::-webkit-scrollbar-thumb {
-            background: #475569;
-            border-radius: 4px;
+        .feature-card:hover {
+            transform: translateY(-5px);
+            border-color: #6366f1;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
         }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #64748b;
-        }
-        /* Keyframe for subtle bounce on feature icons */
-        @keyframes bounce-subtle {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-5px); }
-        }
-        .feature-icon-hover:hover svg {
-            animation: bounce-subtle 0.6s ease-in-out;
+        .ai-coach-image {
+            border-radius: 12px;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
         }
     </style>
 </head>
 <body class="antialiased">
-    <!-- Header/Navigation -->
-    <header class="bg-slate-900 shadow-lg py-4 px-6 md:px-12 sticky top-0 z-50">
+    <!-- Navigation -->
+    <nav class="bg-gray-900 py-4 px-6 sticky top-0 z-50 shadow-lg">
         <div class="container mx-auto flex justify-between items-center">
-            <!-- Reverted to text-based logo -->
-            <a href="#" class="text-2xl font-extrabold text-indigo-400">CyberCertEdge</a>
-            <nav class="hidden md:block">
-                <ul class="flex space-x-6">
-                    <li><a href="#features" class="text-slate-300 hover:text-indigo-300 transition-colors duration-300">Features</a></li>
-                    <li><a href="#how-it-works" class="text-slate-300 hover:text-indigo-300 transition-colors duration-300">How It Works</a></li>
-                    <li><a href="#target-users" class="text-slate-300 hover:text-indigo-300 transition-colors duration-300">Who It's For</a></li>
-                    <li><a href="#contact" class="text-slate-300 hover:text-indigo-300 transition-colors duration-300">Contact</a></li>
-                </ul>
-            </nav>
-            <button class="md:hidden text-slate-300 focus:outline-none">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            <div class="text-2xl font-bold text-indigo-400">CyberCertEdge</div>
+            <div class="hidden md:flex space-x-8">
+                <a href="#features" class="text-gray-300 hover:text-indigo-300 transition">Features</a>
+                <a href="#how-it-works" class="text-gray-300 hover:text-indigo-300 transition">How It Works</a>
+                <a href="#ai-coach" class="text-gray-300 hover:text-indigo-300 transition">AI Coach</a>
+                <a href="#certifications" class="text-gray-300 hover:text-indigo-300 transition">Certifications</a>
+            </div>
+            <button class="md:hidden text-gray-300">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
             </button>
         </div>
-    </header>
+    </nav>
 
-    <main>
-        <!-- Hero Section -->
-        <section class="relative bg-gradient-to-br from-blue-900 to-indigo-900 py-20 md:py-32 text-center overflow-hidden rounded-b-3xl shadow-xl">
-            <!-- Background image URL updated to remove all text parameters -->
-            <div class="absolute inset-0 opacity-20" style="background-image: url('https://placehold.co/1920x1080/1a202c/e2e8f0'); background-size: cover; background-position: center;"></div>
-            <div class="container mx-auto px-6 relative z-10">
-                <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-6 text-white drop-shadow-lg">
-                    Master Cybersecurity Certifications <br class="hidden sm:inline"> with AI-Powered Precision
-                </h1>
-                <p class="text-lg md:text-xl text-indigo-200 max-w-3xl mx-auto mb-10">
-                    Your next-generation exam preparation platform for MCQ-based cybersecurity certifications.
-                    Prepare smarter, not harder, with cutting-edge AI diagnostics and personalized learning paths.
-                </p>
-                <!-- Changed CTA to be more generic -->
-                <a href="#vision" class="inline-block bg-indigo-500 hover:bg-indigo-600 text-white font-bold py-3 px-8 rounded-full shadow-lg transform hover:scale-105 transition-all duration-300 ease-in-out focus:outline-none focus:ring-4 focus:ring-indigo-500 focus:ring-opacity-50">
-                    Explore Our Vision
-                </a>
-            </div>
-        </section>
-
-        <!-- Vision Section -->
-        <section id="vision" class="py-16 md:py-24 bg-slate-800 rounded-lg mx-auto my-12 max-w-6xl shadow-xl">
-            <div class="container mx-auto px-6">
-                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-indigo-300">Our Vision: Smarter Exam Prep, Unrivaled Results</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-                    <div class="text-slate-300 space-y-6">
-                        <p class="text-lg leading-relaxed">
-                            CyberCertEdge is engineered to be the ultimate next-generation exam preparation platform. We focus exclusively on MCQ-based cybersecurity certifications like <strong class="text-white">CISM, CISSP, CEH, GPEN, Security+, CHFI, and AWS Security</strong>, providing a streamlined and highly effective learning path tailored to your success.
-                        </p>
-                        <p class="text-lg leading-relaxed">
-                            Our core strength lies in an **AI-powered learning experience**. Imagine a smart coach guiding you based on your unique weaknesses, diagnostic reports that explain exactly "Why You Failed," and AI-driven question generation ensuring you always have fresh, relevant practice. We're building a platform that truly understands your learning needs.
-                        </p>
-                    </div>
-                    <div class="flex justify-center items-center">
-                        <img src="https://placehold.co/600x400/2f3a52/aeb8c9?text=Personalized+AI+Coach" alt="AI-Powered Learning" class="rounded-xl shadow-2xl border-2 border-indigo-600 transform hover:scale-105 transition-transform duration-300">
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Features Section -->
-        <section id="features" class="py-16 md:py-24 bg-slate-900">
-            <div class="container mx-auto px-6">
-                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-blue-300">Key Features & Differentiators</h2>
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Feature 1: AI-Powered Learning -->
-                    <div class="bg-slate-800 p-8 rounded-xl shadow-lg border border-slate-700 hover:border-indigo-500 transition-all duration-300 transform hover:-translate-y-2 feature-icon-hover">
-                        <div class="text-indigo-400 mb-4 flex justify-center">
-                            <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
-                        </div>
-                        <h3 class="text-xl font-semibold text-white mb-3 text-center">Intelligent AI Coaching</h3>
-                        <p class="text-slate-400 text-center">
-                            Our smart AI coach analyzes your performance, identifies weak areas, and provides personalized study recommendations to optimize your learning path.
-                        </p>
-                        <ul class="list-disc list-inside text-slate-400 text-sm mt-4 space-y-1">
-                            <li>Adaptive learning paths.</li>
-                            <li>Detailed "Why You Failed" reports.</li>
-                            <li>AI-generated practice questions.</li>
-                        </ul>
-                    </div>
-                    <!-- Feature 2: Simple, Powerful UI -->
-                    <div class="bg-slate-800 p-8 rounded-xl shadow-lg border border-slate-700 hover:border-indigo-500 transition-all duration-300 transform hover:-translate-y-2 feature-icon-hover">
-                        <div class="text-indigo-400 mb-4 flex justify-center">
-                            <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1l-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
-                        </div>
-                        <h3 class="text-xl font-semibold text-white mb-3 text-center">Seamless User Experience</h3>
-                        <p class="text-slate-400 text-center">
-                            Enjoy a distraction-free exam environment with customizable themes, and manage your progress effortlessly through our intuitive, mobile-first user portal.
-                        </p>
-                        <ul class="list-disc list-inside text-slate-400 text-sm mt-4 space-y-1">
-                            <li>Clean exam player with day/night mode.</li>
-                            <li>Mobile-first design for on-the-go study.</li>
-                            <li>Comprehensive analytics dashboard.</li>
-                        </ul>
-                    </div>
-                    <!-- Feature 3: Unique Engagement Modes -->
-                    <div class="bg-slate-800 p-8 rounded-xl shadow-lg border border-slate-700 hover:border-indigo-500 transition-all duration-300 transform hover:-translate-y-2 feature-icon-hover">
-                        <div class="text-indigo-400 mb-4 flex justify-center">
-                            <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                        </div>
-                        <h3 class="text-xl font-semibold text-white mb-3 text-center">Engaging Study Tools</h3>
-                        <p class="text-slate-400 text-center">
-                            Boost retention and combat exam stress with AI flashcards, spaced repetition, AI Rival Mode, and a unique exam anxiety mode.
-                        </p>
-                        <ul class="list-disc list-inside text-slate-400 text-sm mt-4 space-y-1">
-                            <li>AI flashcards & spaced repetition.</li>
-                            <li>"Trick Question of the Day".</li>
-                            <li>AI Rival Mode for competitive learning.</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- How It Works Section -->
-        <section id="how-it-works" class="py-16 md:py-24 bg-slate-800 rounded-lg mx-auto my-12 max-w-6xl shadow-xl">
-            <div class="container mx-auto px-6">
-                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-yellow-300">How CyberCertEdge Works</h2>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-10 text-center">
-                    <!-- Step 1 -->
-                    <div class="p-6 rounded-xl bg-slate-700 shadow-md transform hover:scale-105 transition-transform duration-300">
-                        <div class="text-yellow-400 mb-4">
-                            <svg class="w-16 h-16 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 15l-2 5L9 9l7 8-3 3z"></path></svg>
-                        </div>
-                        <h3 class="text-2xl font-semibold text-white mb-3">1. Choose Your Certification</h3>
-                        <p class="text-slate-300">Select from a wide range of top cybersecurity certifications like CISSP, Security+, and CEH.</p>
-                    </div>
-                    <!-- Step 2 -->
-                    <div class="p-6 rounded-xl bg-slate-700 shadow-md transform hover:scale-105 transition-transform duration-300">
-                        <div class="text-yellow-400 mb-4">
-                            <svg class="w-16 h-16 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path></svg>
-                        </div>
-                        <h3 class="text-2xl font-semibold text-white mb-3">2. Practice with AI</h3>
-                        <p class="text-slate-300">Engage with AI-generated questions, personalized feedback, and smart diagnostics to pinpoint weaknesses.</p>
-                    </div>
-                    <!-- Step 3 -->
-                    <div class="p-6 rounded-xl bg-slate-700 shadow-md transform hover:scale-105 transition-transform duration-300">
-                        <div class="text-yellow-400 mb-4">
-                            <svg class="w-16 h-16 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                        </div>
-                        <h3 class="text-2xl font-semibold text-white mb-3">3. Pass Your Exam!</h3>
-                        <p class="text-slate-300">Build confidence, reduce anxiety, and walk into your certification exam fully prepared for success.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Target Users Section -->
-        <section id="target-users" class="py-16 md:py-24 bg-slate-900">
-            <div class="container mx-auto px-6 text-center">
-                <h2 class="text-3xl md:text-4xl font-bold mb-8 text-green-300">Who Benefits from CyberCertEdge?</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div class="bg-slate-800 p-8 rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300">
-                        <h3 class="text-2xl font-semibold text-white mb-4">Cybersecurity Professionals</h3>
-                        <p class="text-slate-300 text-lg">
-                            Individuals aiming to pass challenging cybersecurity certification exams (CISM, CISSP, CEH, Security+, etc.) with a smarter, more engaging, and highly effective study tool. Our platform is designed to cut down study time and maximize retention.
-                        </p>
-                    </div>
-                    <div class="bg-slate-800 p-8 rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300">
-                        <h3 class="text-2xl font-semibold text-white mb-4">Organizations & Teams</h3>
-                        <p class="text-slate-300 text-lg">
-                            Companies seeking structured exam training for their cybersecurity teams, complete with admin oversight, detailed analytics, and robust content management capabilities. Ensure your team is always up-to-date and certified.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Architecture/Goal Section -->
-        <section class="py-16 md:py-24 bg-slate-800 rounded-lg mx-auto my-12 max-w-6xl shadow-xl">
-            <div class="container mx-auto px-6 text-center">
-                <h2 class="text-3xl md:text-4xl font-bold mb-8 text-purple-300">Built for Performance & Engagement</h2>
-                <p class="text-lg md:text-xl text-slate-300 max-w-4xl mx-auto mb-10">
-                    Our platform is built on a scalable and modern architecture, combining a <strong class="text-white">Laravel backend with a Vue.js frontend and Tailwind UI</strong> for a seamless, high-performance experience. We integrate cutting-edge AI microservices for advanced question generation, quality review, and in-depth analysis, ensuring a truly intelligent learning environment. With robust <strong class="text-white">role-based access control and strong security measures</strong>, CyberCertEdge is designed to be compliance-ready from day one.
-                </p>
-                <p class="text-xl md:text-2xl font-semibold text-white max-w-3xl mx-auto">
-                    <span class="text-indigo-400">Our Goal:</span> To build a polished, professional, AI-driven exam simulator that stands out as smarter and more engaging than traditional question banks, empowering cybersecurity professionals worldwide.
-                </p>
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer - Announcement Section -->
-    <footer id="contact" class="bg-slate-900 py-10 px-6 md:px-12 text-center text-slate-400 rounded-t-3xl shadow-inner mt-12">
-        <div class="container mx-auto">
-            <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">CyberCertEdge is Coming Soon!</h2>
-            <p class="mb-6 text-lg max-w-2xl mx-auto">
-                We're diligently working to bring you the most advanced AI-powered cybersecurity exam preparation platform.
-                Get ready to transform your certification journey.
+    <!-- Hero Section -->
+    <section class="gradient-bg py-20 md:py-32 text-center">
+        <div class="container mx-auto px-6">
+            <h1 class="text-4xl md:text-6xl font-bold text-white mb-6">Master Cybersecurity Certifications with AI Precision</h1>
+            <p class="text-xl text-indigo-200 max-w-3xl mx-auto mb-10">
+                The next-generation exam preparation platform for cybersecurity professionals. 
+                Prepare smarter with cutting-edge AI diagnostics and personalized learning paths.
             </p>
-            <p class="mb-8 text-xl font-semibold text-indigo-300">
-                Stay tuned for updates and launch announcements!
-            </p>
-            <div class="flex justify-center space-x-6">
-                <!-- Placeholder for social media links -->
-                <a href="#" class="text-slate-400 hover:text-white transition-colors duration-300">
-                    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012 10.792v.058a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.188a11.644 11.644 0 006.29 2.063z"></path></svg>
-                </a>
-                <a href="#" class="text-slate-400 hover:text-white transition-colors duration-300">
-                    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33V22C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd"></path></svg>
-                </a>
-                <a href="#" class="text-slate-400 hover:text-white transition-colors duration-300">
-                    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12.315 2c2.43 0 2.715.01 3.655.047 1.017.04 1.79.232 2.426.465.66.237 1.272.54 1.838 1.105.566.566.868 1.179 1.105 1.838.234.636.425 1.409.465 2.426.036.94.047 1.225.047 3.655s-.01 2.715-.047 3.655c-.04.992-.232 1.765-.465 2.399-.237.66-.54 1.271-1.105 1.838-.566.566-.868 1.179-1.105 1.838-.636.234-1.409.425-2.399.465-.94.036-1.225.047-3.655.047s-2.715-.01-3.655-.047c-.992-.04-1.765-.232-2.399-.465-.66-.237-1.271-.54-1.838-1.105-.566-.566-.868-1.179-1.105-1.838-.234-.636-.425-1.409-.465-2.399-.036-.94-.047-1.225-.047-3.655s.01-2.715.047-3.655c.04-.992.232-1.765.465-2.399.237-.66.54-1.271 1.105-1.838.566-.566 1.179-.868 1.838-1.105.636-.234 1.409-.425 2.399-.465.94-.036 1.225-.047 3.655-.047zm0 1.5c-2.673 0-3.017.01-4.057.054-.957.04-1.57.218-1.954.364-.395.147-.686.357-.925.596-.239.239-.449.53-.596.925-.146.384-.324.997-.364 1.954-.044 1.04-.054 1.384-.054 4.057s.01 3.017.054 4.057c.04.957.218 1.57.364 1.954.147.395.357.686.596.925.239.239.449.53.596.925.384.146.997.324 1.954.364 1.04.044 1.384.054 4.057.054s3.017-.01 4.057-.054c.957-.04 1.57-.218 1.954-.364.395-.147.686-.357.925-.596.239-.239.449-.53.596-.925.146-.384.324-.997.364-1.954.044-1.04.054-1.384.054-4.057s-.01-3.017-.054-4.057c-.04-.957-.218-1.57-.364-1.954-.147-.395-.357-.686-.596-.925-.239-.239-.53-.449-.925-.596-.384-.146-.997-.324-1.954-.364-1.04-.044-1.384-.054-4.057-.054zm0 6.827c-2.074 0-3.75 1.676-3.75 3.75s1.676 3.75 3.75 3.75 3.75-1.676 3.75-3.75-1.676-3.75-3.75-3.75zm0 1.5c1.241 0 2.25 1.009 2.25 2.25s-1.009 2.25-2.25 2.25-2.25-1.009-2.25-2.25 1.009-2.25 2.25-2.25zm5.853-6.813c-.556 0-1.006.45-1.006 1.006s.45 1.006 1.006 1.006c.556 0 1.006-.45 1.006-1.006s-.45-1.006-1.006-1.006z" clip-rule="evenodd"></path></svg>
-                </a>
+            <a href="#ai-coach" class="inline-block bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-8 rounded-full transition">
+                Discover AI Coach
+            </a>
+        </div>
+    </section>
+
+    <!-- Vision Section -->
+    <section class="py-20 bg-gray-800">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-3xl md:text-4xl font-bold text-indigo-300 mb-8">Our Vision for Smarter Exam Prep</h2>
+                <p class="text-lg text-gray-300 mb-8">
+                    CyberCertEdge is engineered to be the ultimate AI-powered exam preparation platform focused exclusively on MCQ-based cybersecurity certifications. 
+                    We combine smart diagnostics with personalized learning to maximize your success.
+                </p>
+                <div class="grid md:grid-cols-2 gap-8 mt-12">
+                    <div class="bg-gray-700 p-6 rounded-lg">
+                        <h3 class="text-xl font-semibold text-white mb-4">For Professionals</h3>
+                        <p class="text-gray-300">
+                            Cut study time in half with AI that identifies your weak areas and creates targeted practice sessions.
+                        </p>
+                    </div>
+                    <div class="bg-gray-700 p-6 rounded-lg">
+                        <h3 class="text-xl font-semibold text-white mb-4">For Organizations</h3>
+                        <p class="text-gray-300">
+                            Train your security teams efficiently with admin tools and detailed progress analytics.
+                        </p>
+                    </div>
+                </div>
             </div>
-            <p class="mt-8 text-sm">&copy; 2025 CyberCertEdge. All rights reserved.</p>
+        </div>
+    </section>
+
+    <!-- AI Coach Section -->
+    <section id="ai-coach" class="py-20 bg-gray-900">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0 md:pr-10">
+                    <h2 class="text-3xl md:text-4xl font-bold text-indigo-300 mb-6">Your Personal AI Cybersecurity Coach</h2>
+                    <p class="text-lg text-gray-300 mb-6">
+                        Our AI coach analyzes every answer to provide tailored feedback and create a customized learning path just for you.
+                    </p>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <svg class="h-6 w-6 text-green-400 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                            </svg>
+                            <span class="text-gray-300">"Why You Failed" diagnostic reports with detailed explanations</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="h-6 w-6 text-green-400 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                            </svg>
+                            <span class="text-gray-300">AI-generated flashcards for weak areas using spaced repetition</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="h-6 w-6 text-green-400 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                            </svg>
+                            <span class="text-gray-300">Confidence-vs-accuracy insights to improve test-taking strategy</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="md:w-1/2">
+                    <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="AI Coach Dashboard" class="ai-coach-image">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-20 bg-gray-800">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-indigo-300 mb-16">Key Differentiators</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="feature-card bg-gray-700 p-8 rounded-lg">
+                    <div class="text-indigo-400 mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-white mb-3">AI-Powered Questions</h3>
+                    <p class="text-gray-400">
+                        Continuously updated question bank with AI-generated items that adapt to exam trends and your personal weaknesses.
+                    </p>
+                </div>
+                <div class="feature-card bg-gray-700 p-8 rounded-lg">
+                    <div class="text-indigo-400 mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-white mb-3">Exam Anxiety Mode</h3>
+                    <p class="text-gray-400">
+                        Special training mode that simulates exam pressure to build confidence and improve performance under stress.
+                    </p>
+                </div>
+                <div class="feature-card bg-gray-700 p-8 rounded-lg">
+                    <div class="text-indigo-400 mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-white mb-3">Spaced Repetition</h3>
+                    <p class="text-gray-400">
+                        Our algorithm determines the optimal time to review concepts to maximize retention with minimal effort.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications" class="py-20 bg-gray-900">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-indigo-300 mb-12">Supported Certifications</h2>
+            <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-6">
+                <div class="bg-gray-800 p-6 rounded-lg text-center">
+                    <div class="text-indigo-400 text-xl font-bold mb-2">CISSP</div>
+                    <p class="text-gray-400 text-sm">Certified Information Systems Security Professional</p>
+                </div>
+                <div class="bg-gray-800 p-6 rounded-lg text-center">
+                    <div class="text-indigo-400 text-xl font-bold mb-2">CISM</div>
+                    <p class="text-gray-400 text-sm">Certified Information Security Manager</p>
+                </div>
+                <div class="bg-gray-800 p-6 rounded-lg text-center">
+                    <div class="text-indigo-400 text-xl font-bold mb-2">CEH</div>
+                    <p class="text-gray-400 text-sm">Certified Ethical Hacker</p>
+                </div>
+                <div class="bg-gray-800 p-6 rounded-lg text-center">
+                    <div class="text-indigo-400 text-xl font-bold mb-2">Security+</div>
+                    <p class="text-gray-400 text-sm">CompTIA Security+</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section id="how-it-works" class="py-20 bg-gray-800">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-indigo-300 mb-16">How It Works</h2>
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Learning Process" class="rounded-lg shadow-xl">
+                </div>
+                <div class="md:w-1/2 md:pl-10">
+                    <div class="space-y-8">
+                        <div class="flex">
+                            <div class="flex-shrink-0 bg-indigo-500 rounded-full h-12 w-12 flex items-center justify-center text-white font-bold mr-4">1</div>
+                            <div>
+                                <h3 class="text-xl font-semibold text-white mb-2">Select Your Certification</h3>
+                                <p class="text-gray-400">Choose from our supported cybersecurity certifications to begin your preparation.</p>
+                            </div>
+                        </div>
+                        <div class="flex">
+                            <div class="flex-shrink-0 bg-indigo-500 rounded-full h-12 w-12 flex items-center justify-center text-white font-bold mr-4">2</div>
+                            <div>
+                                <h3 class="text-xl font-semibold text-white mb-2">Take Diagnostic Test</h3>
+                                <p class="text-gray-400">Our AI analyzes your strengths and weaknesses to create a personalized study plan.</p>
+                            </div>
+                        </div>
+                        <div class="flex">
+                            <div class="flex-shrink-0 bg-indigo-500 rounded-full h-12 w-12 flex items-center justify-center text-white font-bold mr-4">3</div>
+                            <div>
+                                <h3 class="text-xl font-semibold text-white mb-2">Practice with AI Coach</h3>
+                                <p class="text-gray-400">Engage with smart practice sessions, flashcards, and mock exams tailored to your needs.</p>
+                            </div>
+                        </div>
+                        <div class="flex">
+                            <div class="flex-shrink-0 bg-indigo-500 rounded-full h-12 w-12 flex items-center justify-center text-white font-bold mr-4">4</div>
+                            <div>
+                                <h3 class="text-xl font-semibold text-white mb-2">Pass Your Exam</h3>
+                                <p class="text-gray-400">Walk into your certification exam with confidence, fully prepared for success.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Coming Soon -->
+    <section class="py-20 gradient-bg text-center">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Coming Soon: Revolutionize Your Certification Prep</h2>
+            <p class="text-xl text-indigo-200 max-w-2xl mx-auto mb-10">
+                We're working hard to launch CyberCertEdge. Be the first to know when we're ready!
+            </p>
+            <form class="max-w-md mx-auto">
+                <div class="flex">
+                    <input type="email" placeholder="Your email address" class="flex-grow px-4 py-3 rounded-l-lg focus:outline-none text-gray-900">
+                    <button type="submit" class="bg-indigo-800 hover:bg-indigo-900 text-white font-bold py-3 px-6 rounded-r-lg transition">
+                        Notify Me
+                    </button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 py-12">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <div class="text-2xl font-bold text-indigo-400 mb-2">CyberCertEdge</div>
+                    <p class="text-gray-400">AI-powered cybersecurity certification prep</p>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-indigo-300 transition">
+                        <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012 10.792v.058a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.188a11.644 11.644 0 006.29 2.063z"></path></svg>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-indigo-300 transition">
+                        <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"></path></svg>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-indigo-300 transition">
+                        <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10c5.51 0 10-4.48 10-10S17.51 2 12 2zm6.605 4.61a8.502 8.502 0 011.93 5.314c-.281-.054-3.101-.629-5.943-.271-.065-.141-.12-.293-.184-.445a25.416 25.416 0 00-.564-1.236c3.145-1.28 4.577-3.124 4.761-3.362zM12 3.475c2.17 0 4.154.813 5.662 2.148-.152.216-1.443 1.941-4.48 3.08-1.399-2.57-2.95-4.675-3.189-5A8.687 8.687 0 0112 3.475zm-3.633.803a53.896 53.896 0 013.167 4.935c-3.992 1.063-7.517 1.04-7.896 1.04a8.581 8.581 0 014.729-5.975zM3.453 12.01v-.26c.37.01 4.512.065 8.775-1.215.25.477.477.965.694 1.453-.109.033-.228.065-.336.098-4.404 1.42-6.747 5.303-6.942 5.629a8.522 8.522 0 01-2.19-5.705zM12 20.547a8.482 8.482 0 01-5.239-1.8c.152-.315 1.888-3.656 6.703-5.337.022-.01.033-.01.054-.022a35.318 35.318 0 011.823 6.475 8.4 8.4 0 01-3.341.684zm4.761-1.465c-.086-.52-.542-3.015-1.659-6.084 2.679-.423 5.022.271 5.314.369a8.468 8.468 0 01-3.655 5.715z" clip-rule="evenodd"></path></svg>
+                    </a>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-500 text-sm">
+                &copy; 2025 CyberCertEdge. All rights reserved.
+            </div>
         </div>
     </footer>
 </body>
