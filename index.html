@@ -51,15 +51,14 @@
             white-space: nowrap;
             overflow: hidden;
             border-right: 3px solid white;
-            width: 0;
-            animation: typing 3s steps(30, end) forwards, blink 0.75s infinite;
+            animation: typing 4s steps(40, end) forwards, blink 0.75s step-end infinite;
         }
         @keyframes typing {
-            from {width: 0;}
-            to {width: 22ch;}
+            from { width: 0; }
+            to { width: 33ch; } /* Matches full tagline length */
         }
         @keyframes blink {
-            50% {border-color: transparent;}
+            50% { border-color: transparent; }
         }
         p {
             font-size: 1rem;
@@ -84,13 +83,6 @@
             color: #ddd;
         }
     </style>
-    <script>
-        document.addEventListener("DOMContentLoaded", function(){
-            setTimeout(() => {
-                document.querySelector("h2").style.width = "22ch";
-            }, 500);
-        });
-    </script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
