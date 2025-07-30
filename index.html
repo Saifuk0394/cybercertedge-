@@ -1,89 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CyberCertEdge</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            margin: 0;
-            font-family: 'Inter', sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            overflow: hidden;
-            color: white;
-            text-align: center;
-            transition: background 1s ease;
-        }
-        body.light { background: linear-gradient(-45deg, #6b73ff, #000dff, #007bff, #00c6ff); background-size: 400% 400%; }
-        body.dark { background: linear-gradient(-45deg, #000428, #004e92, #283e51, #485563); background-size: 400% 400%; }
-        h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
-        p { font-size: 1.2rem; margin-bottom: 1.5rem; }
-        .logo { width: 120px; margin-bottom: 20px; animation: glow 2s infinite alternate; }
-        .cta-btn {
-            background: #00c6ff;
-            color: #fff;
-            padding: 14px 36px;
-            font-size: 1.2rem;
-            font-weight: 600;
-            border: none;
-            border-radius: 30px;
-            cursor: pointer;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .cta-btn:hover {
-            transform: scale(1.1);
-            box-shadow: 0 0 20px rgba(0, 198, 255, 0.8);
-        }
-        .cursor-glow {
-            position: fixed;
-            top: 0; left: 0;
-            width: 30px; height: 30px;
-            border-radius: 50%;
-            background: rgba(0, 198, 255, 0.3);
-            pointer-events: none;
-            transform: translate(-50%, -50%);
-            transition: transform 0.05s ease;
-            mix-blend-mode: screen;
-        }
-        @keyframes glow {
-            from { filter: drop-shadow(0 0 0px #00c6ff); }
-            to { filter: drop-shadow(0 0 15px #00c6ff); }
-        }
-        @keyframes gradientMove {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-        body.light, body.dark { animation: gradientMove 12s ease infinite; }
-        @media (max-width: 600px) {
-            h1 { font-size: 2rem; }
-            p { font-size: 1rem; }
-            .cta-btn { font-size: 1rem; padding: 12px 28px; }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CyberCertEdge</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      overflow: hidden;
+      color: white;
+      text-align: center;
+      transition: background 1s ease;
+      position: relative;
+    }
+    body.light {
+      background: linear-gradient(-45deg, #6b73ff, #000dff, #007bff, #00c6ff);
+      background-size: 400% 400%;
+    }
+    body.dark {
+      background: linear-gradient(-45deg, #000428, #004e92, #283e51, #485563);
+      background-size: 400% 400%;
+    }
+    h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
+    p { font-size: 1.2rem; margin-bottom: 1.5rem; }
+    .logo { width: 120px; margin-bottom: 20px; animation: glow 2s infinite alternate; }
+    .cta-btn {
+      background: #00c6ff;
+      color: #fff;
+      padding: 14px 36px;
+      font-size: 1.2rem;
+      font-weight: 600;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .cta-btn:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 20px rgba(0, 198, 255, 0.8);
+    }
+    .cursor-glow {
+      position: fixed;
+      top: 0; left: 0;
+      width: 30px; height: 30px;
+      border-radius: 50%;
+      background: rgba(0, 198, 255, 0.3);
+      pointer-events: none;
+      transform: translate(-50%, -50%);
+      transition: transform 0.05s ease;
+      mix-blend-mode: screen;
+    }
+    .floating-icon {
+      position: absolute;
+      width: 60px;
+      opacity: 0.4;
+      animation: float 8s ease-in-out infinite;
+    }
+    @keyframes float {
+      0% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(-20px) rotate(10deg); }
+      100% { transform: translateY(0) rotate(0deg); }
+    }
+    @keyframes glow {
+      from { filter: drop-shadow(0 0 0px #00c6ff); }
+      to { filter: drop-shadow(0 0 15px #00c6ff); }
+    }
+    @keyframes gradientMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    body.light, body.dark { animation: gradientMove 12s ease infinite; }
+    @media (max-width: 600px) {
+      h1 { font-size: 2rem; }
+      p { font-size: 1rem; }
+      .cta-btn { font-size: 1rem; padding: 12px 28px; }
+      .floating-icon { width: 40px; }
+    }
+  </style>
 </head>
 <body>
-    <div class="content">
-        <img src="logo.png" alt="CyberCertEdge Logo" class="logo">
-        <h1>CyberCertEdge</h1>
-        <p>Prep Like a Pro. Pass Like a Boss.</p>
-        <p>All-in-one AI-powered platform to master cybersecurity certifications with smart coaching, realistic exams, and detailed analytics.</p>
-        <button class="cta-btn">Get Started</button>
-    </div>
-    <div class="cursor-glow"></div>
-    <script>
-        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        document.body.classList.add(prefersDark ? 'dark' : 'light');
+  <!-- Floating certification icons -->
+  <img src="cert-cissp.png" class="floating-icon" style="top: 20%; left: 10%; animation-delay: 0s;">
+  <img src="cert-cism.png" class="floating-icon" style="top: 40%; right: 15%; animation-delay: 2s;">
+  <img src="cert-ceh.png" class="floating-icon" style="bottom: 15%; left: 30%; animation-delay: 4s;">
 
-        const cursor = document.querySelector('.cursor-glow');
-        document.addEventListener('mousemove', e => {
-            cursor.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
-        });
-    </script>
+  <div class="content">
+    <img src="logo.png" alt="CyberCertEdge Logo" class="logo">
+    <h1>CyberCertEdge</h1>
+    <p>Prep Like a Pro. Pass Like a Boss.</p>
+    <p>All-in-one AI-powered platform to master cybersecurity certifications with smart coaching, realistic exams, and detailed analytics.</p>
+    <button class="cta-btn">Get Started</button>
+  </div>
+  <div class="cursor-glow"></div>
+
+  <script>
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    document.body.classList.add(prefersDark ? 'dark' : 'light');
+
+    const cursor = document.querySelector('.cursor-glow');
+    document.addEventListener('mousemove', e => {
+      cursor.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
+    });
+  </script>
 </body>
 </html>
